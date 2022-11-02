@@ -12,7 +12,9 @@
 */
 
 function getRandomIntInclusive(min, max) {
+  // eslint-disable-next-line no-param-reassign
   min = Math.ceil(min);
+  // eslint-disable-next-line no-param-reassign
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
 }
@@ -25,7 +27,7 @@ function injectHTML(list) {
   const listEl = document.createElement('ol');
   target.appendChild(listEl);
 
-  list.forEach(item => {
+  list.forEach((item) => {
     const el = document.createElement('li');
     el.innerText = item.name;
     listEl.appendChild(el);
@@ -49,12 +51,12 @@ function injectHTML(list) {
 
 function processRestaurants(list) {
   console.log('fired restaurants list');
-  const range =  [...Array(15).keys()];
+  const range = [...Array(15).keys()];
   const newArray = range.map((item) => {
-    const index =  getRandomIntInclusive(0, list.length);
+    const index = getRandomIntInclusive(0, list.length);
     return list[index];
   });
-return newArray;
+  return newArray;
   /*
     ## Process Data Separately From Injecting It
       This function should accept your 1,000 records
@@ -127,7 +129,7 @@ async function mainEvent() {
 
       // This constant will have the value of your 15-restaurant collection when it processes
       const restaurantList = processRestaurants(arrayFromJson.data);
-      console.log (restaurantList);
+      console.log(restaurantList);
 
       // And this function call will perform the "side effect" of injecting the HTML list for you
       injectHTML(restaurantList);
