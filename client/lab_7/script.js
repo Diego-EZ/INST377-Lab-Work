@@ -116,13 +116,16 @@ async function mainEvent() {
 
   // This IF statement ensures we can't do anything if we don't have information yet
   if (arrayFromJson.data?.length > 0) { // the question mark in this means "if this is set at all"
+    let currentList = [];
+
     submit.style.display = 'block'; // let's turn the submit button back on by setting it to display as a block when we have data available
 
     loadAnimation.classList.remove('lds-ellipsis');
     loadAnimation.classList.add('lds-ellipsis_hidden');
 
     form.addEventListener('input', (event) => {
-      console.log(event.target.value);
+      console.log('input', event.target.value);
+      injectHTML(currentList);
     });
 
     // And here's an eventListener! It's listening for a "submit" button specifically being clicked
@@ -132,7 +135,7 @@ async function mainEvent() {
       submitEvent.preventDefault();
 
       // This constant will have the value of your 15-restaurant collection when it processes
-      const restaurantList = processRestaurants(arrayFromJson.data);
+      currentList = processRestaurants(arrayFromJson.data);
       console.log(restaurantList);
 
       // And this function call will perform the "side effect" of injecting the HTML list for you
