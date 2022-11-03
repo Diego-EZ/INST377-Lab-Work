@@ -49,7 +49,7 @@ function injectHTML(list) {
 */
 }
 
-/* function processRestaurants(list) {
+function processRestaurants(list) {
   console.log('fired restaurants list');
   const range = [...Array(15).keys()];
   const newArray = range.map((item) => {
@@ -57,7 +57,7 @@ function injectHTML(list) {
     return list[index];
   });
   return newArray;
-*/
+}
 
 function filterList(array, filterInputValue) {
   return array.filter((item) => {
