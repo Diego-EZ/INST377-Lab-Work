@@ -49,7 +49,7 @@ function injectHTML(list) {
 */
 }
 
-function processRestaurants(list) {
+/* function processRestaurants(list) {
   console.log('fired restaurants list');
   const range = [...Array(15).keys()];
   const newArray = range.map((item) => {
@@ -57,7 +57,16 @@ function processRestaurants(list) {
     return list[index];
   });
   return newArray;
-  /*
+*/
+
+function filterList(array, filterInputValue) {
+  return array.filter((item) => {
+    const lowerCaseName = item.name.toLowerCase();
+    const lowerCaseQuery = filterInputValue.toLowerCase();
+    return lowerCaseName.includes(lowerCaseQuery);
+  });
+}
+/*
     ## Process Data Separately From Injecting It
       This function should accept your 1,000 records
       then select 15 random records
@@ -75,7 +84,6 @@ function processRestaurants(list) {
     - Return only their name, category, and location
     - Return the new list of 15 restaurants so we can work on it separately in the HTML injector
   */
-}
 
 async function mainEvent() {
   /*
@@ -125,7 +133,8 @@ async function mainEvent() {
 
     form.addEventListener('input', (event) => {
       console.log('input', event.target.value);
-      injectHTML(currentList);
+      const newFilterList = filterList(arrayFromJson.data, event.target.value);
+      injectHTML(newFilterList);
     });
 
     // And here's an eventListener! It's listening for a "submit" button specifically being clicked
