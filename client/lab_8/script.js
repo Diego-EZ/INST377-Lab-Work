@@ -84,7 +84,7 @@ function filterList(array, filterInputValue) {
     */
    function initMap() {
     console.log('initMap');
-    // const map = L.map('map').setView([38.9457, -76.7339], 13);
+    const map = L.map('map').setView([38.9457, -76.7339], 13);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -94,7 +94,7 @@ function filterList(array, filterInputValue) {
 
    function markerPlace(array, map) {
     console.log('markerPlace', array);
-    const marker = L.marker([51.5, -0.09]).addTo(map);
+    // const marker = L.marker([51.5, -0.09]).addTo(map);
     array.forEach((item) => {
       const {coordinates} = item.geocode_column_1;
       L.marker([coordinates[1], coordinates[0]]).addTo(map);
