@@ -158,7 +158,7 @@ async function mainEvent() {
       console.log('input', event.target.value);
       const newFilterList = filterList(arrayFromJson.data, event.target.value);
       injectHTML(newFilterList);
-      markerPlace(currentList, pageMap);
+      markerPlace(newFilterList, pageMap);
     });
 
     // And here's an eventListener! It's listening for a "submit" button specifically being clicked
