@@ -82,9 +82,9 @@ function filterList(array, filterInputValue) {
       - Return only their name, category, and location
       - Return the new list of 15 restaurants so we can work on it separately in the HTML injector
     */
-   function initMap(){
+   function initMap() {
     console.log('initMap');
-    const map = L.map('map').setView([38.9457, -76.7339], 13);
+    // const map = L.map('map').setView([38.9457, -76.7339], 13);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
