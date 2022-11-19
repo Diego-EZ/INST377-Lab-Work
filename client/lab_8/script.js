@@ -92,7 +92,7 @@ function filterList(array, filterInputValue) {
     return map;
    }
 
-   function markerPlace(array, map){
+   function markerPlace(array, map) {
     console.log('markerPlace', array);
     const marker = L.marker([51.5, -0.09]).addTo(map);
     array.forEach((item) => {
