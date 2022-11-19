@@ -274,7 +274,10 @@
     background-color: aquamarine;
   }
   
-  /*
+  /* Map Styles */
+  #map { height: 180px; }
+  
+    /*
   Form Styles
   */
   
@@ -319,8 +322,7 @@
         width: 100%;
       }
   }
-  /* Map Styles */
-  #map { height: 180px; }
+
 
   /* 
       New code bonus: pure CSS data loading icon
