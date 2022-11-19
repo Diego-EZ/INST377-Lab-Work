@@ -100,10 +100,13 @@ function filterList(array, filterInputValue) {
         layer.remove();
       }
     });
-    array.forEach((item) => {
+    array.forEach((item,index) => {
       const {coordinates} = item.geocode_column_1;
       console.log(item);
       L.marker([coordinates[1], coordinates[0]]).addTo(map);
+      if(index === 0) {
+        map.setView([coordinates[1], coordinates[0]], 13);
+      }
     });
    }
 
