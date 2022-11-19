@@ -95,7 +95,7 @@ function filterList(array, filterInputValue) {
    function markerPlace(){
     console.log('markerPlace', array);
     const marker = L.marker([51.5, -0.09]).addTo(map);
-    array.forEach(item => {
+    array.forEach((item) => {
       const {coordinates} = item.geocode_column_1;
       L.marker([coordinates[0], coordinates[1]]).addTo(map);
     });
